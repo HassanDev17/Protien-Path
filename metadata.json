@@ -1,0 +1,7 @@
+{
+  "name": "ProteinPath",
+  "description": "A PWA for tracking protein and calorie intake using AI to analyze meals from text or photos.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
