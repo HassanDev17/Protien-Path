@@ -29,11 +29,11 @@ const ProgressRing: React.FC<ProgressRingProps> = ({ radius, stroke, progress, c
   }, [strokeDashoffset]);
 
   return (
-    <div className="flex flex-col items-center justify-center relative">
+    <div className="flex flex-col items-center justify-center relative" style={{ width: radius * 2, height: radius * 2 }}>
       <svg
         height={radius * 2}
         width={radius * 2}
-        className="rotate-[-90deg]"
+        className="rotate-[-90deg] absolute top-0 left-0"
       >
         <circle
           stroke="hsl(var(--muted))" // Use muted color for background ring
@@ -57,10 +57,10 @@ const ProgressRing: React.FC<ProgressRingProps> = ({ radius, stroke, progress, c
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-        <span className="text-xl font-bold text-foreground">{Math.round(progress)}%</span>
-        <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">{label}</span>
+        <span className="text-xl font-bold text-foreground leading-none">{Math.round(progress)}%</span>
+        <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider mt-1">{label}</span>
       </div>
-      <div className="mt-2 text-center">
+      <div className="absolute -bottom-6 left-0 right-0 text-center">
         <p className="text-xs font-medium text-muted-foreground">{subLabel}</p>
       </div>
     </div>

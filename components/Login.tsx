@@ -25,7 +25,7 @@ export const Login: React.FC = () => {
                     password,
                 });
                 if (error) throw error;
-                alert('Check your email for the confirmation link!');
+                // Success message will be shown via auth state change
             } else {
                 const { error } = await supabase.auth.signInWithPassword({
                     email,
@@ -92,7 +92,7 @@ export const Login: React.FC = () => {
                                     {error}
                                 </div>
                             )}
-                            <Button type="submit" className="w-full bg-rose-500 hover:bg-rose-600 text-white" disabled={loading}>
+                            <Button type="submit" className="w-full bg-rose-500 hover:bg-rose-600 text-white shadow-md" disabled={loading}>
                                 {loading ? (
                                     <>
                                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />

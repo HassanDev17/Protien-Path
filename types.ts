@@ -3,6 +3,7 @@ export interface NutritionData {
   protein: number;
   fat?: number;
   carbs?: number;
+  sugar?: number;
   estimatedWeight?: string;
 }
 
@@ -14,6 +15,7 @@ export interface Meal {
   imageUrl?: string;
   description?: string;
   type: 'breakfast' | 'lunch' | 'dinner' | 'snack';
+  user_id?: string; // Optional for backward compatibility, but required in database
 }
 
 export interface UserGoals {
@@ -21,6 +23,7 @@ export interface UserGoals {
   dailyProtein: number; // in grams
   dailyCarbs: number; // in grams
   dailyFat: number; // in grams
+  dailySugar: number; // in grams
 }
 
 export interface DaySummary {

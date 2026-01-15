@@ -129,7 +129,7 @@ const AddMeal: React.FC<AddMealProps> = ({ onAddMeal, onClose }) => {
         <Button
           onClick={handleAnalyze}
           disabled={isAnalyzing || (!description && !selectedImage)}
-          className="w-full h-12 text-lg font-bold shadow-lg shadow-primary/20"
+          className="w-full h-12 text-lg font-bold bg-rose-500 hover:bg-rose-600 text-white shadow-lg shadow-rose-500/20"
         >
           {isAnalyzing ? (
             <>
