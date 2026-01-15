@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Camera, X, Loader2, Check } from 'lucide-react';
-import { analyzeMealWithGemini } from '../services/geminiService';
+import { analyzeMealWithOpenAI } from '../services/openaiService';
 import { Meal } from '../types';
 import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
@@ -42,7 +42,7 @@ const AddMeal: React.FC<AddMealProps> = ({ onAddMeal, onClose }) => {
 
     try {
       const base64Data = selectedImage ? selectedImage.split(',')[1] : undefined;
-      const result = await analyzeMealWithGemini(description, base64Data);
+      const result = await analyzeMealWithOpenAI(description, base64Data);
 
       const newMeal: Meal = {
         id: generateId(),
